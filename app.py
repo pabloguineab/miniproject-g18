@@ -32,7 +32,7 @@ def predict(image, model):
 
 # Function for UI layout
 def run_app():
-    
+    st.sidebar.image("George_Brown_College_logo.svg.png", use_column_width=True)
     st.sidebar.header("About")
     st.sidebar.info(
         "This application is a demonstration of how to use "
@@ -63,7 +63,10 @@ def run_app():
         st.image(image, use_column_width=True)
         predictions = predict(image, model)
         class_name = decode_predictions(predictions, top=1)
-        st.success(f"This image is most likely a : {class_name[0][0][1]}")
+        st.success(f"This image is most likely a: {class_name[0][0][1]}")
+
+        # Show balloons after submitting the image
+        st.balloons()
 
 if __name__ == "__main__":
     run_app()
