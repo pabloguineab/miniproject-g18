@@ -168,7 +168,7 @@ def about():
              "Abdullah",
              "Dushyant",
             )
-    st.image("my_picture.jpeg", width=350)
+    st.image("George_Brown_College_logo.svg.png", width=350)
 
 if __name__ == "__main__":
     launch()
