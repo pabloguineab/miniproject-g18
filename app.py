@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
 from streamlit_option_menu import option_menu
-
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 st.set_page_config(
     page_title="Image Recognition",
     layout="centered",
