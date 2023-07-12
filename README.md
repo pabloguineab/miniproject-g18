@@ -11,6 +11,6 @@ This is a Streamlit application that uses a pre-trained MobileNetV2 model from T
 
 ## Screenshot
 
-![Screenshot](screenshot1.png)
+![Screenshot](shootscreen1.png)
 ![Screenshot](shoot.png)
 Interact with the app: https://miniproject-g18.streamlit.app/
