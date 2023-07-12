@@ -3,6 +3,7 @@ from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_i
 import streamlit as st
 from PIL import Image, ImageOps
 import numpy as np
+import pyjokes
 
 # Set page title and layout
 st.set_page_config(
@@ -29,6 +30,10 @@ def predict(image, model):
     image = np.expand_dims(image, axis=0)
     prediction = model.predict(image)
     return prediction
+
+# Function to get a random joke
+def get_random_joke():
+    return pyjokes.get_joke()
 
 # Function for UI layout
 def run_app():
@@ -64,6 +69,11 @@ def run_app():
         predictions = predict(image, model)
         class_name = decode_predictions(predictions, top=1)
         st.success(f"This image is most likely a: {class_name[0][0][1]}")
+
+        # Show random joke
+        st.info("Here's a random joke for you:")
+        joke = get_random_joke()
+        st.write(joke)
 
         # Show balloons after submitting the image
         st.balloons()
